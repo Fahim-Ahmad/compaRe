@@ -25,6 +25,9 @@
 #' library(compaRe)
 #' compare_df(df1, df2, unique_id_df1, unique_id_df2)
 
+#' @import tidyr
+#' @import dplyr
+#' @import stringr
 #' @export
 compare_df <- function(df1, df2, unique_id_df1, unique_id_df2) {
 
