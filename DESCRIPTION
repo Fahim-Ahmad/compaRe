@@ -1,0 +1,14 @@
+Package: compaRe
+Title: Compares two versions of the same data set
+Version: 0.0.0.1
+Authors@R: 
+    person("Fahim", "Ahmad", , "fyousufzai93@gmail.com", role = c("aut", "cre"))
+Description: What the package does (one paragraph).
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Suggests: 
+    dplyr,
+    stringr,
+    tidyr
