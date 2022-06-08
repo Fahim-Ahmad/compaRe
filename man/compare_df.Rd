@@ -5,7 +5,7 @@
 \title{Compare data frames}
 \usage{
 library(compaRe)
-compare_df(df1, df2, unique_id_df1, unique_id_df2)
+compare_df(df1, df2, unique_id_df1, unique_id_df2, compare_all = TRUE)
 }
 \arguments{
 \item{df1}{Old version of the dataset}
@@ -15,6 +15,8 @@ compare_df(df1, df2, unique_id_df1, unique_id_df2)
 \item{unique_id_df1}{unique identifier in df1}
 
 \item{unique_id_df2}{unique identifier in df2}
+
+\item{compare_all}{logical. \code{TRUE}: compare all columns/variables. \code{FALSE}: compare only shared columns/variable.}
 }
 \description{
 The \code{compare_df()} function compares two versions of the same data
@@ -29,9 +31,17 @@ mtcars_v2$am[mtcars_v2$am == 1] <- 2
 mtcars_v2$wt[mtcars_v2$wt > 100] <- 105
 mtcars_v2$cyl[mtcars_v2$cyl == 8] <- 7
 mtcars_v2 <- mtcars_v2[1:30, ]
+mtcars_v2$rowid <- 1:nrow(mtcars_v2)
 
 compare_df(df1 = mtcars1, df2 = mtcars2,
           unique_id_df1 = "id",
-          unique_id_df2 = "id"
+          unique_id_df2 = "id",
+          compare_all = TRUE
+)
+
+compare_df(df1 = mtcars1, df2 = mtcars2,
+          unique_id_df1 = "id",
+          unique_id_df2 = "id",
+          compare_all = FALSE
 )
 }
